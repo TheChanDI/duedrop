@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  if !user
+    div.span6
+      if message != ''
+        div.alert.alert-error= message
+          button.close(type="button", data-dismiss="alert") &times;
+      form.form-horizontal(action='/login', method='post')
+        fieldset
+          legend.control-group Log in
+          div.control-group
+            label.control-label(for='username') Email address
+            div.controls
+              input.input-xlarge(type='text', name='username', placeholder='you@example.com')
+          div.control-group
+            label.control-label(for='password') Password
+            div.controls
+              input.input-xlarge(type='password', name='password', placeholder='case-sensitive')
+          div.control-group
+            div.controls
+              button.btn.btn-success Log in
+              | &nbsp;or 
+              a(href="/signup")
+                button.btn.btn-primary Sign up
+  else
+    div.drops
+      h1 Your dues
+      form#drop-form(action='/drop', method='post')
+        div.row
+          div#first-drop.span8.offset2
+            input#new-box(type='checkbox')
+            input#new-drop.drop(name="new-drop", placeholder='What do you need to do?', autofocus)
+            button#add-drop
+        div#duedrops
+        -each drop in drops
+          div.row(id='#{drop._id}')
+            div.span8.offset2
+              input(type='checkbox')
+              input.drop(value="#{drop.text}")
+              button.close(type="button") &times;
+            div.remove.span2
+              div.btn-group
+                button.delete.btn.btn-danger Delete?
+                button.second-thoughts.btn.btn-info On second thought...

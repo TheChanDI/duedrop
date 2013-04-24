@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div.span6
+    form.form-horizontal(action='/signup', method='post')
+      fieldset
+        legend.control-group Sign up
+        div.control-group
+          label.control-label(for='username') Email address
+          div.controls
+            input#username.input-xlarge(type='text', name='username', placeholder='you@example.com')
+        div.control-group
+          label.control-label(for='password') Password
+          div.controls
+            input#password.input-xlarge(type='password', name='password', placeholder='case-sensitive')
+        div.control-group
+          label.control-label(for='password_confirm') Password (confirm)
+          div.controls
+            input#password_confirm.input-xlarge(type='password', name='password_confirm', placeholder='case-sensitive')
+        div.control-group
+          div.controls
+            button.btn.btn-success Sign up

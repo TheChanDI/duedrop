@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div.span6
+    if message != ''
+      div.alert.alert-error= message
+        button(type="button", class="close", data-dismiss="alert") &times;
+    form.form-horizontal(action='/login', method='post')
+      fieldset
+        legend.control-group Log in
+        div.control-group
+          label.control-label(for='username') Email address
+          div.controls
+            input.input-xlarge(type='text', name='username', placeholder='you@example.com')
+        div.control-group
+          label.control-label(for='password') Password
+          div.controls
+            input.input-xlarge(type='password', name='password', placeholder='case-sensitive')
+        div.control-group
+          div.controls
+            button.btn.btn-success Log in
