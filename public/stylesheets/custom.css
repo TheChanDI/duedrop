@@ -111,14 +111,6 @@ legend {
   padding-left: 20px;
   padding-right: 20px;
   background-color: #fafcfe;
-  /*background-image: -moz-linear-gradient(top, #abcde3, #d4e6f1);
-  background-image: -webkit-gradient(linear, 0 0, 0 50%, from(#abcde3), to(#d4e6f1));
-  background-image: -webkit-linear-gradient(top, #abcde3, #d4e6f1);
-  background-image: -o-linear-gradient(top, #abcde3, #d4e6f1);
-  background-image: linear-gradient(to bottom, #abcde3, #d4e6f1);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffabcde3', endColorstr='#ffe4eff6', GradientType=0); 
-  */
   border: 1px solid #f0faf6;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -140,6 +132,12 @@ legend {
 
 .remove {
   margin-top: 12px;
+  display: none;
+}
+
+.update {
+  margin-top: 12px;
+  margin-right: -30px;
   display: none;
 }
 

@@ -17,7 +17,7 @@ var scripts = [ 'javascripts/jquery.min.js',
                 'javascripts/jquery.ui.widget.js',
                 'bootstrap/js/bootstrap.js',
                 'javascripts/modules/duedrop.js'
-    ];
+              ];
 
 module.exports = function(app) {
   app.get('/', function(req, res) {
@@ -67,7 +67,7 @@ module.exports = function(app) {
   );
 
   app.post('/drop', ensureAuthenticated, function(req, res) {
-    var drop  = new Drops(req.body.duedrop);
+    var drop = new Drops(req.body.duedrop);
     
     User.findById(req.user._id, function(err, user) {
       if (err) {
@@ -76,6 +76,24 @@ module.exports = function(app) {
       }
 
       user.drops.push(drop);
+      user.save(function(err) {
+        if (err) {
+          console.log(err);
+          return req.flash('error', "There was an error updating your dues: " + err);
+        }
+        return user;
+      });
+    });
+  });
+
+  app.post('/drop/update', ensureAuthenticated, function(req, res) {
+    User.findById(req.user._id, function(err, user) {
+      if (err) {
+        console.log(err);
+        return req.flash('error', "There was an error retrieving your info: " + err);
+      }
+      var updateDrop = user.drops.id(req.body.dropId);
+      updateDrop.text = req.body.drop;
       user.save(function(err) {
         if (err) {
           console.log(err);
