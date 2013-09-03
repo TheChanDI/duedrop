@@ -37,11 +37,11 @@ block content
           div.row(id='#{drop._id}')
             div.span8.offset2
               input(type='checkbox')
-              input.drop(value="#{drop.text}")
+              input.saved-drop.drop(value="#{drop.text}")
               button.close(type="button") &times;
             div.update.span1
               div.btn-group
-                button.btn.revert Revert
+                button.btn.revert Undo
                 button.btn.commit.btn-inverse Update
             div.remove.span2
               div.btn-group

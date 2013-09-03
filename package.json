@@ -1,12 +1,18 @@
 {
-  "name": "application-name",
+  "name": "duedrop",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app.js"
   },
+  "main": "app.js",
   "dependencies": {
     "express": "3.2.0",
-    "jade": "*"
+    "jade": "*",
+    "connect-flash": "~0.1.1",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "mongoose": "~3.6.18",
+    "passport-local-mongoose": "~0.2.4"
   }
 }

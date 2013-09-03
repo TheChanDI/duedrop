@@ -46,7 +46,7 @@ module.exports = function(app) {
         if (err) {
           return res.render('signup', { title: 'duedrop - sign up', user: user, scripts: scripts });
         }
-        return res.redirect('/');
+        res.redirect('/');
       });
     });
   });
@@ -81,7 +81,7 @@ module.exports = function(app) {
           console.log(err);
           return req.flash('error', "There was an error updating your dues: " + err);
         }
-        return user;
+        res.json(200, drop);
       });
     });
   });
@@ -99,7 +99,7 @@ module.exports = function(app) {
           console.log(err);
           return req.flash('error', "There was an error updating your dues: " + err);
         }
-        return user;
+        res.json(200, updateDrop);
       });
     });
   });
@@ -117,7 +117,7 @@ module.exports = function(app) {
           console.log(err);
           return req.flash('error', "There was an error updating your dues: " + err);
         }
-        return user;
+        res.send(200);
       });
     });
   });
