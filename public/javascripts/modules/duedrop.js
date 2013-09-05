@@ -129,4 +129,14 @@ $(function() {
     var dropId = this.parentNode.parentNode.parentNode.id;
     duedrop.remove(dropId);
   });
+
+  $('div').on('click', 'input[type="checkbox"]', function(evt) {
+    evt.stopPropagation();
+    var linedInput = $(this).siblings('.drop')[0]; 
+    if ($(this).is(':checked')) {
+      $(linedInput).css({ 'text-decoration': 'line-through' });
+    } else {
+      $(linedInput).css({ 'text-decoration': 'none' });
+    }
+  });
 });
