@@ -9,7 +9,7 @@ body {
   visibility: hidden;
 }
 
-.close {
+.close-drop {
   margin-top: 15px;
 }
 
@@ -110,7 +110,6 @@ legend {
 .navbar-inner {
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #fafcfe;
   border: 1px solid #f0faf6;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;

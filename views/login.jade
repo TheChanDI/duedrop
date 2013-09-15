@@ -4,7 +4,7 @@ block content
   div.span6
     if message != ''
       div.alert.alert-error= message
-        button(type="button", class="close", data-dismiss="alert") &times;
+        button.close(type="button", data-dismiss="alert") &times;
     form.form-horizontal(action='/login', method='post')
       fieldset
         legend.control-group Log in
